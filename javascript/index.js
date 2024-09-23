@@ -135,4 +135,29 @@ makeBroccoli()
 
 /* --------------------------------------- */
 // Bonus 2 - Promise all
-// ...
+
+
+Promise.all([
+  obtainInstruction('brusselsSprouts', 0),
+  obtainInstruction('brusselsSprouts', 1),
+  obtainInstruction('brusselsSprouts', 2),
+  obtainInstruction('brusselsSprouts', 3),
+  obtainInstruction('brusselsSprouts', 4),
+  obtainInstruction('brusselsSprouts', 5),
+  obtainInstruction('brusselsSprouts', 6),
+  obtainInstruction('brusselsSprouts', 7)
+])
+.then((steps) => {
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${steps[0]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${steps[1]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${steps[2]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${steps[3]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${steps[4]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${steps[5]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${steps[6]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>${steps[7]}</li>`;
+  document.querySelector("#brusselsSprouts").innerHTML += `<li>Brussels sprouts are ready!</li>`;
+  document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+})
+
+obtainInstruction(brusselSprouts)
