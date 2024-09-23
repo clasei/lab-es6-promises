@@ -41,6 +41,7 @@ getInstruction('mashedPotatoes', 0, (step1) => {
 
         getInstruction("mashedPotatoes", 4, (step5) => {
            document.querySelector("#mashedPotatoes").innerHTML += `<li>${step5}</li>`;
+           document.querySelector("#mashedPotatoesImg").removeAttribute("hidden")
 
         }, (error) => {
           console.log(error)
@@ -82,6 +83,7 @@ obtainInstruction("steak", 0)
 })
 .then((step4) => {
   document.querySelector("#steak").innerHTML += `<li>${step4}</li>`;
+  document.querySelector("#steakImg").removeAttribute("hidden")
 })
 .catch((error) => {
   console.log(error)
@@ -115,6 +117,7 @@ async function makeBroccoli() {
 
     const step6 = await obtainInstruction('broccoli', 6)
     document.querySelector("#broccoli").innerHTML += `<li>${step6}</li>`;
+    document.querySelector("#broccoliImg").removeAttribute("hidden")
   }
 
   catch (error) {
@@ -124,6 +127,11 @@ async function makeBroccoli() {
 
 makeBroccoli()
 
+/* --------------------------------------- */
+// Bonus 1 - Display Images
+// All xxxImg are using 'hidden' attribute according to inspect tools (browser check)
+// remove 'hidden' added after the instructions are showed (see above)
+// DONE
 
 /* --------------------------------------- */
 // Bonus 2 - Promise all
